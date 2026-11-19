@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f4eee6;
+}
+
+main {
+    padding-left: 80px;
+    padding-right: 80px;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p, h3 {
+    color: #7b7168;
+}
+
+/*NAVBAR*/
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-bottom: 1px #e3d9cc solid;
+}
+
+#logo span {
+    color: #c0583a;
+}
+
+#navLinks {
+    display: flex;
+    gap: 25px;
+}
+
+#navLinks a{
+    color: #7b7168;
+}
+
+#navLinks a[aria-current="page"] {
+    color: black;
+    border-bottom: 2px #c0583a solid;;
+    text-underline-offset: 6px;
+}
+/*HERO*/
+
+#hero h1 {
+    margin-bottom: 5px;
+}
+
+#hero p {
+    margin-top: 0;
+}
+
+#progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    counter-reset: step;
+}
+
+#progress p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    counter-increment: step;
+}
+
+#progress p::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#progress p:not(:last-child)::after {
+    content: "";
+    width: 32px;
+    height: 2px;
+    background-color: currentColor;
+}

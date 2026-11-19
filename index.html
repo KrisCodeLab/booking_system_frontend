@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="assets/js/index.js" type="module" defer></script>
+    <title>Schnittpunkt</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a id="logo" href="index.html">
+                <h2>Schnitt<span>punkt</span></h2>
+            </a>
+
+            <div id="navLinks">
+                <a href="#" aria-current="page">Termin buchen</a>
+                <a href="#">Termin stornieren</a>
+                <a href="#">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="bookingSelection">
+            <section id="hero">
+                <h1>Termin online buchen</h1>
+                <p>Dienstag bis Freitag 9-18 Uhr, Samstag 9-14 Uhr</p>
+                <div id="progress">
+                    <p>Leistung</p>
+                    <p>Person</p>
+                    <p>Zeit</p>
+                    <p>Ihre Daten</p>
+                </div>
+            </section>
+            
+            <section id="serviceOverview">
+                <h3>1 - LEISTUNG</h3>
+                <div id="serviceCardContainer">
+                    <div class="serviceCard">
+                        <h3>Herrenschnitt</h3>
+                        <p>30 min - 28€</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="employeeOverview">
+                <h3>2 -PERSON</h3>
+                <div id="employeeCardContainer">
+                    <p>Mara</p>
+                </div>
+            </section>
+            
+            <section id="timeslotOverview">
+                <h3>3 - DATUM UND UHRZEIT</h3>
+                <div id="dateContainer">
+                    <button type="button" id="previousDay">&lt;</button>
+                    <div id="dateField">
+                        <span id="weekday">Donnerstag, </span>
+                        <input type="date" id="bookingDate">
+                    </div>
+                    <button type="button" id="nextDay">&gt;</button>
+                </div>
+
+                <div id="timeslotsContainer">
+                    <p>10:30</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="bookingOverview">
+            <h3>Ihre Buchung</h3>
+            <table id="appointmentDetails">
+                <tr><td>Leistung</td><td id="service">Färben</td></tr>
+                <tr><td>Person</td><td id="employee">1 pound</td></tr>
+                <tr><td>Termin</td><td id="date">1 pound</td></tr>
+                <tr><td>Dauer</td><td id="duration">1 pound</td></tr>
+                <tr><td>Preis</td><td id="sum">75€</td></tr>
+            </table>
+
+            <form id="form">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="text" id="phone" name="phone" placeholder="Telefon">
+                <input type="text" id="mail" name="mail" placeholder="E-Mail">
+
+                <button type="submit">Termin verbindlich buchen</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

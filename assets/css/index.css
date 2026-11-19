@@ -1,0 +1,163 @@
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#bookingSelection {
+    flex: 1;
+    min-width: 0;
+}
+
+/*SERVICES*/
+
+#serviceCardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.serviceCard h3 {
+    color: black;
+}
+
+.serviceCard {
+    background-color: #fffdf9;
+    border-radius: 10px;
+    border: 1px solid #e3d9cc;
+    padding: 0 16px;
+    cursor: pointer;
+
+}
+
+/*EMPLOYEES*/
+
+#employeeCardContainer {
+    display: flex;
+    gap: 12px;
+}
+
+#employeeCardContainer p {
+    padding: 10px 20px;
+    color: black;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/*APPOINTMENT DATE*/
+
+#dateContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#dateContainer button,
+#dateContainer p {
+    padding: 10px 15px;
+    color: black;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 8px;
+}
+
+#dateContainer button {
+    cursor: pointer;
+}
+
+#dateField {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 8px;
+}
+
+#dateField input {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font: inherit;
+}
+
+/*TIMESLOTS*/
+
+#timeslotsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#timeslotsContainer p {
+    padding: 12px 30px;
+    color: #3e5d49;
+    background-color: #dfe9df;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*APPOINTMENT DETAILS*/
+
+#bookingOverview {
+    width: 290px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 140px;
+    margin-left: 30px;
+    padding: 22px;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 14px;
+}
+
+#appointmentDetails {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#appointmentDetails td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e3d9cc;
+}
+
+#appointmentDetails td:first-child {
+    color: #7b7168;
+}
+
+#appointmentDetails td:last-child {
+    text-align: right;
+}
+
+#appointmentDetails tr:last-child td {
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form input {
+    padding: 12px;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 8px;
+}
+
+#form button {
+    margin-top: 5px;
+    padding: 16px;
+    color: white;
+    background-color: #c0583a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
