@@ -29,6 +29,11 @@ main {
 
 }
 
+.serviceCard.selected {
+    background-color: #f5e2da;
+    border-color: #c0583a;
+}
+
 /*EMPLOYEES*/
 
 #employeeCardContainer {
@@ -43,6 +48,12 @@ main {
     border: 1px solid #e3d9cc;
     border-radius: 25px;
     cursor: pointer;
+}
+
+#employeeCardContainer p.selected {
+    background-color: #302b26;
+    border-color: #302b26;
+    color: white;
 }
 
 /*APPOINTMENT DATE*/
@@ -92,12 +103,29 @@ main {
     gap: 10px;
 }
 
-#timeslotsContainer p {
+#timeslotsContainer p, 
+#message {
     padding: 12px 30px;
-    color: #3e5d49;
-    background-color: #dfe9df;
     border-radius: 8px;
+}
+
+#timeslotsContainer p {
+    background-color: #dfe9df;
     cursor: pointer;
+    color: #3e5d49;
+}
+
+#timeslotsContainer #message {
+    background-color: #e9dfdf;
+    color: #5d3e3e;
+    cursor: initial;
+}
+
+
+
+#timeslotsContainer p.selected {
+    background-color: #c0583a;
+    color: white;
 }
 
 /*APPOINTMENT DETAILS*/
