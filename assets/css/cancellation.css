@@ -1,0 +1,42 @@
+﻿main {
+    display: block;
+    max-width: 680px;
+    margin: 48px auto;
+    padding: 0 20px;
+}
+
+.cancellation {
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 14px;
+    padding: 28px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form label {
+    color: #7b7168;
+}
+
+#form input {
+    padding: 12px;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+#form button {
+    margin-top: 5px;
+    padding: 16px;
+    color: white;
+    background-color: #c0583a;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    cursor: pointer;
+}

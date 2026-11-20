@@ -4,6 +4,10 @@ const serviceCards = document.getElementById("serviceCardContainer")
 const employeeCards = document.getElementById("employeeCardContainer")
 const bookingDate = document.getElementById("bookingDate")
 const timeSlots = document.getElementById("timeslotsContainer")
+
+const previousDayButton = document.getElementById("previousDay")
+const nextDayButton = document.getElementById("nextDay")
+
 const overviewService = document.getElementById("service")
 const overviewEmployee = document.getElementById("employee")
 const overviewDate = document.getElementById("date")
@@ -11,9 +15,7 @@ const overviewDuration = document.getElementById("duration")
 const overviewSum = document.getElementById("sum")
 
 const customerForm = document.getElementById("form")
-const customerName = document.getElementById("name")
-const customerPhone = document.getElementById("phone")
-const customerMail = document.getElementById("mail")
+
 
 const appointment = {}
 let anyEmployee = false
@@ -38,6 +40,21 @@ function updateWeekday() {
 
     document.getElementById("weekday").textContent =
         date.toLocaleDateString("de-DE", { weekday: "short" }) + ","
+}
+
+function updateAppointmentDateTime() {
+    appointment.date = undefined
+    appointment.time = undefined
+
+    if (!appointment.serviceId) return
+
+    if (anyEmployee) {
+        appointment.employeeId = undefined
+        appointment.employee = undefined
+        buildTimeslots(appointment.serviceId)
+    } else if (appointment.employeeId) {
+        buildTimeslots(appointment.serviceId, appointment.employeeId)
+    }
 }
 
 async function buildServiceCards() {
@@ -183,19 +200,7 @@ for (const container of [serviceCards, employeeCards, timeSlots]) {
 
 bookingDate.addEventListener("change", () => {
     updateWeekday()
-
-    appointment.date = undefined
-    appointment.time = undefined
-
-    if (!appointment.serviceId) return
-
-    if (anyEmployee) {
-        appointment.employeeId = undefined
-        appointment.employee = undefined
-        buildTimeslots(appointment.serviceId)
-    } else if (appointment.employeeId) {
-        buildTimeslots(appointment.serviceId, appointment.employeeId)
-    }
+    updateAppointmentDateTime()
 })
 
 customerForm.addEventListener("submit", async (event) => {
@@ -235,14 +240,25 @@ customerForm.addEventListener("submit", async (event) => {
             if (response.ok) {
                 localStorage.setItem("bookedAppointment", JSON.stringify(result.appointment))
                 customerForm.reset()
-                window.location.replace("confirmation.html")
+                window.location.replace("bookingConfirmation.html")
             } else {
                 alert(result.message)
             }
         } else {
             alert("Bitte Termindaten vervollständigen.")
         }
+})
 
+previousDayButton.addEventListener("click", async (event) => {
+    bookingDate.stepDown()
+    updateWeekday()
+    updateAppointmentDateTime()
+})
+
+nextDayButton.addEventListener("click", async (event) => {
+    bookingDate.stepUp()
+    updateWeekday()
+    updateAppointmentDateTime()
 })
 
 // APP START
