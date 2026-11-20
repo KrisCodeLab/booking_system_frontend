@@ -10,6 +10,11 @@ const overviewDate = document.getElementById("date")
 const overviewDuration = document.getElementById("duration")
 const overviewSum = document.getElementById("sum")
 
+const customerForm = document.getElementById("form")
+const customerName = document.getElementById("name")
+const customerPhone = document.getElementById("phone")
+const customerMail = document.getElementById("mail")
+
 const appointment = {}
 let anyEmployee = false
 
@@ -193,6 +198,52 @@ bookingDate.addEventListener("change", () => {
     }
 })
 
+customerForm.addEventListener("submit", async (event) => {
+    event.preventDefault()
+
+    const formData = event.target
+
+    if(
+        appointment.serviceId &&
+        appointment.employeeId &&
+        appointment.date &&
+        appointment.time) {
+                
+            const reqBody = [
+                {
+                    "service_id": appointment.serviceId,
+                    "employee_id": appointment.employeeId,
+                    "start_date": `${appointment.date}T${appointment.time}`
+                },
+                {
+                    "customer_name": formData.name.value,
+                    "phone": formData.phone.value,
+                    "mail": formData.mail.value
+                }
+            ]
+
+            const response = await fetch("http://127.0.0.1:8080/api/v1/appointment/new", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(reqBody)
+            })
+
+            const result = await response.json()
+
+            if (response.ok) {
+                localStorage.setItem("bookedAppointment", JSON.stringify(result.appointment))
+                customerForm.reset()
+                window.location.replace("confirmation.html")
+            } else {
+                alert(result.message)
+            }
+        } else {
+            alert("Bitte Termindaten vervollständigen.")
+        }
+
+})
 
 // APP START
 buildServiceCards()

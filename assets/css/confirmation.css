@@ -1,0 +1,48 @@
+﻿main {
+    display: block;
+    max-width: 680px;
+    margin: 48px auto;
+    padding: 0 20px;
+}
+
+.confirmation {
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 14px;
+    padding: 28px;
+}
+
+#appointmentDetails {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#appointmentDetails td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e3d9cc;
+}
+
+#appointmentDetails td:first-child {
+    color: #7b7168;
+}
+
+#appointmentDetails td:last-child {
+    text-align: right;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 32px;
+}
+
+#token {
+    overflow-wrap: anywhere;
+    color: black;
+}
+
+.booking-link {
+    display: inline-block;
+    margin-top: 28px;
+    color: #c0583a;
+    text-decoration: underline;
+}

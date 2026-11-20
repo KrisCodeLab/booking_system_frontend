@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/confirmation.css">
+    <script src="assets/js/confirmation.js" type="module" defer></script>
+    <title>Buchungsbestätigung | Schnittpunkt</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a id="logo" href="index.html"><h2>Schnitt<span>punkt</span></h2></a>
+            <a href="index.html">Termin buchen</a>
+        </nav>
+    </header>
+    <main>
+        <section class="confirmation">
+            <h1>Ihre Buchungsbestätigung</h1>
+            <p id="message">Ihr Termin wurde erfolgreich gebucht!</p>
+            <div id="details">
+                <table id="appointmentDetails">
+                    <tr><td>Leistung</td><td id="service"></td></tr>
+                    <tr><td>Person</td><td id="employee"></td></tr>
+                    <tr><td>Termin</td><td id="date"></td></tr>
+                    <tr><td>Dauer</td><td id="duration"></td></tr>
+                    <tr><td>Preis</td><td id="price"></td></tr>
+                    <tr><td>Name</td><td id="customer"></td></tr>
+                </table>
+                <h2>Token zum Stornieren</h2>
+                <p>Bewahren Sie diesen Token auf. Mit dem Token können Sie Ihren Termin stornieren.</p>
+                <p id="token"></p>
+            </div>
+            <a class="booking-link" href="index.html">Weiteren Termin buchen</a>
+        </section>
+    </main>
+</body>
+</html>
