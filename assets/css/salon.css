@@ -1,0 +1,385 @@
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#salonOverview {
+    width: 100%;
+    margin: 25px 0;
+}
+
+/* TAGESAUSWAHL */
+#dayNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#dayNavigation h1 {
+    margin: 0;
+}
+
+#dayNavigation button {
+    margin-left: 6px;
+    padding: 9px 14px;
+    color: #302b26;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+/* KALENDER */
+#calendar {
+    overflow: hidden;
+    background-color: #fffdf9;
+    border: 1px solid #e3d9cc;
+    border-radius: 12px;
+}
+
+#calendarHeader,
+#calendarBody {
+    display: grid;
+    grid-template-columns: 60px repeat(3, minmax(0, 1fr));
+}
+
+#calendarHeader {
+    background-color: #efe6d6;
+    border-bottom: 1px solid #e3d9cc;
+}
+
+#calendarHeader > div {
+    padding: 14px 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#calendarHeader > div + div {
+    border-left: 1px solid #e3d9cc;
+}
+
+#timeColumn > div {
+    height: 64px;
+    box-sizing: border-box;
+    padding: 7px;
+    color: #7b7168;
+    border-bottom: 1px solid #e3d9cc;
+}
+
+.employeeColumn {
+    display: grid;
+    grid-template-rows: repeat(114, calc(64px / 6));
+    grid-template-columns: minmax(0, 1fr);
+    border-left: 1px solid #e3d9cc;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 63px,
+        #e3d9cc 63px,
+        #e3d9cc 64px
+    );
+}
+
+/* TERMINKARTEN */
+.appointment {
+    margin: 4px;
+    padding: 7px 9px;
+    border-left: 4px solid;
+    border-radius: 8px;
+    font-size: 14px;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.appointment strong,
+.appointment span {
+    display: block;
+}
+
+.appointment span {
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.appointment.booked {
+    background-color: #f5e2da;
+    border-color: #c0583a;
+}
+
+.appointment.completed {
+    background-color: #dfe9df;
+    border-color: #3e5d49;
+}
+
+.appointment.cancelled {
+    background-color: #eeeae3;
+    border-color: #afa497;
+    color: #9b9186;
+    text-decoration: line-through;
+}
+
+.appointment.alternate {
+    background-color: #e6dfef;
+    border-color: #756293;
+}
+
+/* LEGENDE */
+#legend {
+    display: flex;
+    gap: 20px;
+    margin: 16px 0 24px;
+    color: #7b7168;
+    font-size: 14px;
+}
+
+#legend i {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+#legend .booked {
+    background-color: #c0583a;
+}
+
+#legend .completed {
+    background-color: #3e5d49;
+}
+
+#legend .cancelled {
+    background-color: #afa497;
+}
+
+
+/* NICHT ERSCHIENEN */
+.appointment.noShow {
+    background-color: #e6dfef;
+    border-color: #756293;
+}
+
+/* POSITION UND DAUER: EINE ZEILE = 5 MINUTEN */
+.start-1 { grid-row-start: 1; }
+.start-2 { grid-row-start: 2; }
+.start-3 { grid-row-start: 3; }
+.start-4 { grid-row-start: 4; }
+.start-5 { grid-row-start: 5; }
+.start-6 { grid-row-start: 6; }
+.start-7 { grid-row-start: 7; }
+.start-8 { grid-row-start: 8; }
+.start-9 { grid-row-start: 9; }
+.start-10 { grid-row-start: 10; }
+.start-11 { grid-row-start: 11; }
+.start-12 { grid-row-start: 12; }
+.start-13 { grid-row-start: 13; }
+.start-14 { grid-row-start: 14; }
+.start-15 { grid-row-start: 15; }
+.start-16 { grid-row-start: 16; }
+.start-17 { grid-row-start: 17; }
+.start-18 { grid-row-start: 18; }
+.start-19 { grid-row-start: 19; }
+.start-20 { grid-row-start: 20; }
+.start-21 { grid-row-start: 21; }
+.start-22 { grid-row-start: 22; }
+.start-23 { grid-row-start: 23; }
+.start-24 { grid-row-start: 24; }
+.start-25 { grid-row-start: 25; }
+.start-26 { grid-row-start: 26; }
+.start-27 { grid-row-start: 27; }
+.start-28 { grid-row-start: 28; }
+.start-29 { grid-row-start: 29; }
+.start-30 { grid-row-start: 30; }
+.start-31 { grid-row-start: 31; }
+.start-32 { grid-row-start: 32; }
+.start-33 { grid-row-start: 33; }
+.start-34 { grid-row-start: 34; }
+.start-35 { grid-row-start: 35; }
+.start-36 { grid-row-start: 36; }
+.start-37 { grid-row-start: 37; }
+.start-38 { grid-row-start: 38; }
+.start-39 { grid-row-start: 39; }
+.start-40 { grid-row-start: 40; }
+.start-41 { grid-row-start: 41; }
+.start-42 { grid-row-start: 42; }
+.start-43 { grid-row-start: 43; }
+.start-44 { grid-row-start: 44; }
+.start-45 { grid-row-start: 45; }
+.start-46 { grid-row-start: 46; }
+.start-47 { grid-row-start: 47; }
+.start-48 { grid-row-start: 48; }
+.start-49 { grid-row-start: 49; }
+.start-50 { grid-row-start: 50; }
+.start-51 { grid-row-start: 51; }
+.start-52 { grid-row-start: 52; }
+.start-53 { grid-row-start: 53; }
+.start-54 { grid-row-start: 54; }
+.start-55 { grid-row-start: 55; }
+.start-56 { grid-row-start: 56; }
+.start-57 { grid-row-start: 57; }
+.start-58 { grid-row-start: 58; }
+.start-59 { grid-row-start: 59; }
+.start-60 { grid-row-start: 60; }
+.start-61 { grid-row-start: 61; }
+.start-62 { grid-row-start: 62; }
+.start-63 { grid-row-start: 63; }
+.start-64 { grid-row-start: 64; }
+.start-65 { grid-row-start: 65; }
+.start-66 { grid-row-start: 66; }
+.start-67 { grid-row-start: 67; }
+.start-68 { grid-row-start: 68; }
+.start-69 { grid-row-start: 69; }
+.start-70 { grid-row-start: 70; }
+.start-71 { grid-row-start: 71; }
+.start-72 { grid-row-start: 72; }
+.start-73 { grid-row-start: 73; }
+.start-74 { grid-row-start: 74; }
+.start-75 { grid-row-start: 75; }
+.start-76 { grid-row-start: 76; }
+.start-77 { grid-row-start: 77; }
+.start-78 { grid-row-start: 78; }
+.start-79 { grid-row-start: 79; }
+.start-80 { grid-row-start: 80; }
+.start-81 { grid-row-start: 81; }
+.start-82 { grid-row-start: 82; }
+.start-83 { grid-row-start: 83; }
+.start-84 { grid-row-start: 84; }
+.start-85 { grid-row-start: 85; }
+.start-86 { grid-row-start: 86; }
+.start-87 { grid-row-start: 87; }
+.start-88 { grid-row-start: 88; }
+.start-89 { grid-row-start: 89; }
+.start-90 { grid-row-start: 90; }
+.start-91 { grid-row-start: 91; }
+.start-92 { grid-row-start: 92; }
+.start-93 { grid-row-start: 93; }
+.start-94 { grid-row-start: 94; }
+.start-95 { grid-row-start: 95; }
+.start-96 { grid-row-start: 96; }
+.start-97 { grid-row-start: 97; }
+.start-98 { grid-row-start: 98; }
+.start-99 { grid-row-start: 99; }
+.start-100 { grid-row-start: 100; }
+.start-101 { grid-row-start: 101; }
+.start-102 { grid-row-start: 102; }
+.start-103 { grid-row-start: 103; }
+.start-104 { grid-row-start: 104; }
+.start-105 { grid-row-start: 105; }
+.start-106 { grid-row-start: 106; }
+.start-107 { grid-row-start: 107; }
+.start-108 { grid-row-start: 108; }
+.start-109 { grid-row-start: 109; }
+.start-110 { grid-row-start: 110; }
+.start-111 { grid-row-start: 111; }
+.start-112 { grid-row-start: 112; }
+.start-113 { grid-row-start: 113; }
+.start-114 { grid-row-start: 114; }
+.duration-1 { grid-row-end: span 1; }
+.duration-2 { grid-row-end: span 2; }
+.duration-3 { grid-row-end: span 3; }
+.duration-4 { grid-row-end: span 4; }
+.duration-5 { grid-row-end: span 5; }
+.duration-6 { grid-row-end: span 6; }
+.duration-7 { grid-row-end: span 7; }
+.duration-8 { grid-row-end: span 8; }
+.duration-9 { grid-row-end: span 9; }
+.duration-10 { grid-row-end: span 10; }
+.duration-11 { grid-row-end: span 11; }
+.duration-12 { grid-row-end: span 12; }
+.duration-13 { grid-row-end: span 13; }
+.duration-14 { grid-row-end: span 14; }
+.duration-15 { grid-row-end: span 15; }
+.duration-16 { grid-row-end: span 16; }
+.duration-17 { grid-row-end: span 17; }
+.duration-18 { grid-row-end: span 18; }
+.duration-19 { grid-row-end: span 19; }
+.duration-20 { grid-row-end: span 20; }
+.duration-21 { grid-row-end: span 21; }
+.duration-22 { grid-row-end: span 22; }
+.duration-23 { grid-row-end: span 23; }
+.duration-24 { grid-row-end: span 24; }
+.duration-25 { grid-row-end: span 25; }
+.duration-26 { grid-row-end: span 26; }
+.duration-27 { grid-row-end: span 27; }
+.duration-28 { grid-row-end: span 28; }
+.duration-29 { grid-row-end: span 29; }
+.duration-30 { grid-row-end: span 30; }
+.duration-31 { grid-row-end: span 31; }
+.duration-32 { grid-row-end: span 32; }
+.duration-33 { grid-row-end: span 33; }
+.duration-34 { grid-row-end: span 34; }
+.duration-35 { grid-row-end: span 35; }
+.duration-36 { grid-row-end: span 36; }
+.duration-37 { grid-row-end: span 37; }
+.duration-38 { grid-row-end: span 38; }
+.duration-39 { grid-row-end: span 39; }
+.duration-40 { grid-row-end: span 40; }
+.duration-41 { grid-row-end: span 41; }
+.duration-42 { grid-row-end: span 42; }
+.duration-43 { grid-row-end: span 43; }
+.duration-44 { grid-row-end: span 44; }
+.duration-45 { grid-row-end: span 45; }
+.duration-46 { grid-row-end: span 46; }
+.duration-47 { grid-row-end: span 47; }
+.duration-48 { grid-row-end: span 48; }
+.duration-49 { grid-row-end: span 49; }
+.duration-50 { grid-row-end: span 50; }
+.duration-51 { grid-row-end: span 51; }
+.duration-52 { grid-row-end: span 52; }
+.duration-53 { grid-row-end: span 53; }
+.duration-54 { grid-row-end: span 54; }
+.duration-55 { grid-row-end: span 55; }
+.duration-56 { grid-row-end: span 56; }
+.duration-57 { grid-row-end: span 57; }
+.duration-58 { grid-row-end: span 58; }
+.duration-59 { grid-row-end: span 59; }
+.duration-60 { grid-row-end: span 60; }
+.duration-61 { grid-row-end: span 61; }
+.duration-62 { grid-row-end: span 62; }
+.duration-63 { grid-row-end: span 63; }
+.duration-64 { grid-row-end: span 64; }
+.duration-65 { grid-row-end: span 65; }
+.duration-66 { grid-row-end: span 66; }
+.duration-67 { grid-row-end: span 67; }
+.duration-68 { grid-row-end: span 68; }
+.duration-69 { grid-row-end: span 69; }
+.duration-70 { grid-row-end: span 70; }
+.duration-71 { grid-row-end: span 71; }
+.duration-72 { grid-row-end: span 72; }
+.duration-73 { grid-row-end: span 73; }
+.duration-74 { grid-row-end: span 74; }
+.duration-75 { grid-row-end: span 75; }
+.duration-76 { grid-row-end: span 76; }
+.duration-77 { grid-row-end: span 77; }
+.duration-78 { grid-row-end: span 78; }
+.duration-79 { grid-row-end: span 79; }
+.duration-80 { grid-row-end: span 80; }
+.duration-81 { grid-row-end: span 81; }
+.duration-82 { grid-row-end: span 82; }
+.duration-83 { grid-row-end: span 83; }
+.duration-84 { grid-row-end: span 84; }
+.duration-85 { grid-row-end: span 85; }
+.duration-86 { grid-row-end: span 86; }
+.duration-87 { grid-row-end: span 87; }
+.duration-88 { grid-row-end: span 88; }
+.duration-89 { grid-row-end: span 89; }
+.duration-90 { grid-row-end: span 90; }
+.duration-91 { grid-row-end: span 91; }
+.duration-92 { grid-row-end: span 92; }
+.duration-93 { grid-row-end: span 93; }
+.duration-94 { grid-row-end: span 94; }
+.duration-95 { grid-row-end: span 95; }
+.duration-96 { grid-row-end: span 96; }
+.duration-97 { grid-row-end: span 97; }
+.duration-98 { grid-row-end: span 98; }
+.duration-99 { grid-row-end: span 99; }
+.duration-100 { grid-row-end: span 100; }
+.duration-101 { grid-row-end: span 101; }
+.duration-102 { grid-row-end: span 102; }
+.duration-103 { grid-row-end: span 103; }
+.duration-104 { grid-row-end: span 104; }
+.duration-105 { grid-row-end: span 105; }
+.duration-106 { grid-row-end: span 106; }
+.duration-107 { grid-row-end: span 107; }
+.duration-108 { grid-row-end: span 108; }

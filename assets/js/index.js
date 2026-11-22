@@ -20,6 +20,14 @@ const customerForm = document.getElementById("form")
 const appointment = {}
 let anyEmployee = false
 
+function clearBookingOverview() {
+    overviewService.innerText = ""
+    overviewEmployee.innerText = ""
+    overviewDate.innerText = ""
+    overviewDuration.innerText = ""
+    overviewSum.innerText = ""
+}
+
 function setTodaysDate() {
     const today = new Date()
     const year = today.getFullYear()
@@ -43,6 +51,7 @@ function updateWeekday() {
 }
 
 function updateAppointmentDateTime() {
+    clearBookingOverview()
     appointment.date = undefined
     appointment.time = undefined
 
@@ -59,6 +68,7 @@ function updateAppointmentDateTime() {
 
 async function buildServiceCards() {
     const services = await requestAPI("services", "GET")
+    if (services === undefined) return
 
     for (const service of services) {
         const duration = service.duration
@@ -78,6 +88,7 @@ async function buildServiceCards() {
         
         serviceCard.addEventListener("click", async (event) => {
             timeSlots.replaceChildren()
+            clearBookingOverview()
 
             anyEmployee = false
             appointment.employeeId = undefined
@@ -99,12 +110,14 @@ async function buildEmployeeCards(serviceId) {
     employeeCards.replaceChildren()
 
     const employees = await requestAPI(`employee/${serviceId}`, "GET")
+    if (employees === undefined) return
 
     const random = document.createElement("p")
     random.innerText = "Egal"
     employeeCards.append(random)
 
     random.addEventListener("click", async (event) => {
+        clearBookingOverview()
         anyEmployee = true
         appointment.employeeId = undefined
         appointment.employee = undefined
@@ -120,6 +133,7 @@ async function buildEmployeeCards(serviceId) {
         employeeCards.append(employeeName)
 
         employeeName.addEventListener("click", async (event) => {
+            clearBookingOverview()
             anyEmployee = false
             appointment.employeeId = employee.id
             appointment.employee = employee.employee_name
@@ -144,6 +158,8 @@ async function buildTimeslots(serviceId, employeeId) {
         )
     }
 
+    if (timeSlotsResponse === undefined) return
+
     if (Array.isArray(timeSlotsResponse)) {
         for (const slot of timeSlotsResponse) {
             const timeCard = document.createElement("p")
@@ -154,6 +170,7 @@ async function buildTimeslots(serviceId, employeeId) {
             timeCard.addEventListener("click", async (event) => {
                 if(!employeeId) {
                     const employee = await requestAPI(`employees/${slot.employee_id}`, "GET")
+                    if (employee === undefined) return
                     appointment.employeeId = employee.id
                     appointment.employee = employee.employee_name
                 }
@@ -240,7 +257,7 @@ customerForm.addEventListener("submit", async (event) => {
             if (response.ok) {
                 localStorage.setItem("bookedAppointment", JSON.stringify(result.appointment))
                 customerForm.reset()
-                window.location.replace("bookingConfirmation.html")
+                window.location.replace("assets/html/bookingConfirmation.html")
             } else {
                 alert(result.message)
             }

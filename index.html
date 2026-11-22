@@ -17,8 +17,9 @@
 
             <div id="navLinks">
                 <a href="#" aria-current="page">Termin buchen</a>
-                <a href="cancellation.html">Termin stornieren</a>
+                <a href="assets/html/cancellation.html">Termin stornieren</a>
                 <a href="#">Kontakt</a>
+                <a href="assets/html/salon.html">Salon Login</a>
             </div>
         </nav>
     </header>
@@ -72,9 +73,9 @@
             </table>
 
             <form id="form">
-                <input type="text" id="name" name="name" placeholder="Name">
-                <input type="text" id="phone" name="phone" placeholder="Telefon">
-                <input type="text" id="mail" name="mail" placeholder="E-Mail">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+                <input type="email" id="mail" name="mail" placeholder="E-Mail" required>
 
                 <button type="submit">Termin verbindlich buchen</button>
             </form>
