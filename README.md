@@ -1,2 +1,5 @@
-# booking_system_frontend
-Frontend for a school project: an appointment scheduling system for a hair salon.
+# Schnittpunkt - Frontend
+
+Schulprojekt für den Friseursalon Schnittpunkt. Das Frontend ermöglicht die Online-Terminbuchung, die Stornierung per Code und eine Tagesübersicht für den Salon.
+
+Die gesamte Dokumentation mit Installation, Start und Projektstand befindet sich im [Backend-Repository](https://github.com/KrisCodeLab/booking_system_backend).
